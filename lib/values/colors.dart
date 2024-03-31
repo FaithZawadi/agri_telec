@@ -1,14 +1,20 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 class AppColors {
    /// Main background white
    static const Color primaryBackground = Color.fromARGB(255, 255, 255, 255);
+    static const Color accentColor = Color(0xFF5C78FF);
+       static const Color secondaryText = Color(0xFF74788D);
+
+    static const Color scaffoldBackground = Color(0xFFFFFFFF);
 
    /// Main text gray
    static const Color primaryText = Color.fromARGB(255, 45, 45, 47);
 
    /// Main control-background
-   static const Color primaryElement = Color.fromARGB(223, 9, 82, 2);
+   static const Color primaryElement = Colors.teal;
 
    /// Main control-text white
    static const Color primaryElementText = Color.fromARGB(255, 255, 255, 255);

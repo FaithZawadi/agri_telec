@@ -11,6 +11,7 @@ Widget inputTextEdit({
   Widget? preffix,
   Widget? suffix,
   Color? hintColor,
+  String? Function(String?)? validator,
 }) {
   return Container(
     height: 55,
@@ -23,7 +24,8 @@ Widget inputTextEdit({
           color: Colors.white
         ),
        ),
-        child: TextField(
+        child: TextFormField(
+          validator: validator,
           autofocus: autofocus,
           controller: controller,
           keyboardType: keyboardType,
@@ -46,3 +48,61 @@ Widget inputTextEdit({
         ),
   );
 }
+
+Widget searchTextField({
+  TextEditingController? controller,
+  TextInputType keyboardType = TextInputType.text,
+  String? hintText,
+ 
+  double marginTop = 15,
+  bool autofocus = false,
+  Icon? suffixIcon,
+  Icon? prefixIcon,
+  Widget? preffix,
+  Widget? suffix,
+  Color? hintColor,
+  String? Function(String?)? validator,
+}) {
+  return Container(
+    height: 47,
+    width: 310,
+    margin: EdgeInsets.only(top: marginTop),
+    decoration:  BoxDecoration(
+      color: Colors.white,
+        // color: AppColors.secondaryElement,
+        borderRadius: BorderRadius.all(Radius.circular(25)),
+        border:  Border.all(
+         color: Colors.white
+        ),
+       ),
+        child: Align(
+          alignment: Alignment.center,
+          child: TextFormField(
+            validator: validator,
+            autofocus: autofocus,
+            controller: controller,
+            keyboardType: keyboardType,
+            decoration: InputDecoration(
+              suffixIcon: suffixIcon,
+              prefixIcon: prefixIcon,
+              prefix: preffix,
+              suffix: suffix,
+              hintText: hintText,
+              contentPadding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              border: InputBorder.none
+            ),
+            style:  TextStyle(
+              color: hintColor,
+              fontFamily: "Avenir",
+              fontWeight: FontWeight.w400,
+              fontSize: 18
+            ),
+            maxLines: 1,
+            autocorrect: false,
+            
+          ),
+        ),
+  );
+}
+
+

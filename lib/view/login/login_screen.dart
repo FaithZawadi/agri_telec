@@ -1,3 +1,5 @@
+import 'package:agri_ai/utils/common/validator.dart';
+import 'package:agri_ai/utils/routes/names.dart';
 import 'package:agri_ai/utils/widgets/button.dart';
 import 'package:agri_ai/utils/widgets/textfield_widget.dart';
 import 'package:agri_ai/values/colors.dart';
@@ -51,6 +53,7 @@ class LoginScreen extends StatelessWidget {
               height: 15,
             ),
             inputTextEdit(
+              validator: Validator.validateEmail,
                 hintColor: Colors.white,
                 controller: mail,
                 keyboardType: TextInputType.emailAddress,
@@ -59,6 +62,7 @@ class LoginScreen extends StatelessWidget {
               height: 10,
             ),
             inputTextEdit(
+              validator: Validator.validatePassword,
               hintColor: Colors.white,
               controller: pswpd,
               keyboardType: TextInputType.emailAddress,
@@ -69,7 +73,9 @@ class LoginScreen extends StatelessWidget {
             ),
             btnFlatButtonWidget(
               title: "Login",
-                fontSize: 17, fontWeight: FontWeight.w500, onPressed: () {}),
+                fontSize: 17, fontWeight: FontWeight.w500, onPressed: () {
+                  Get.offAllNamed(AppRoutes.application);
+                }),
                 const SizedBox(height: 15,),
                 const Text('Forgot your password?', style: TextStyle(
                   color: Colors.white,
@@ -92,7 +98,7 @@ class LoginScreen extends StatelessWidget {
                   
                   WidgetSpan(child: GestureDetector(
                     onTap: () {
-                     Get.to(SignUpScreen());
+                     Get.offAllNamed(AppRoutes.signIn);
                     },
                     child: const Text('  Sign up', style: TextStyle(
                       color: Colors.white,

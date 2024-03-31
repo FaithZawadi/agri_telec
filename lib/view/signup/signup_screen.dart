@@ -1,3 +1,5 @@
+import 'package:agri_ai/utils/common/validator.dart';
+import 'package:agri_ai/utils/routes/names.dart';
 import 'package:agri_ai/utils/widgets/button.dart';
 import 'package:agri_ai/utils/widgets/textfield_widget.dart';
 import 'package:agri_ai/values/colors.dart';
@@ -7,8 +9,11 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class SignUpScreen extends StatelessWidget {
+  final TextEditingController fname = TextEditingController();
+  final TextEditingController lname = TextEditingController();
   final TextEditingController mail = TextEditingController();
   final TextEditingController pswpd = TextEditingController();
+  final TextEditingController cfmpwd = TextEditingController();
   SignUpScreen({super.key});
 
   @override
@@ -53,19 +58,22 @@ class SignUpScreen extends StatelessWidget {
                 height: 15,
               ),
               inputTextEdit(
+                validator: Validator.validateFname,
                   hintColor: Colors.white,
-                  controller: mail,
+                  controller: fname,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'First name'),
               const SizedBox(
                 height: 15,
               ),
               inputTextEdit(
+                validator: Validator.validateLname,
                   hintColor: Colors.white,
-                  controller: mail,
+                  controller: lname,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Last name'),
               inputTextEdit(
+                validator: Validator.validateEmail,
                   hintColor: Colors.white,
                   controller: mail,
                   keyboardType: TextInputType.emailAddress,
@@ -74,6 +82,7 @@ class SignUpScreen extends StatelessWidget {
                 height: 10,
               ),
               inputTextEdit(
+                validator: Validator.validatePassword,
                 hintColor: Colors.white,
                 controller: pswpd,
                 keyboardType: TextInputType.emailAddress,
@@ -83,8 +92,9 @@ class SignUpScreen extends StatelessWidget {
                 height: 15,
               ),
               inputTextEdit(
+                validator: Validator.validateCfmpwd,
                   hintColor: Colors.white,
-                  controller: mail,
+                  controller: cfmpwd,
                   keyboardType: TextInputType.emailAddress,
                   hintText: 'Confirm your password'),
               const SizedBox(
@@ -92,7 +102,9 @@ class SignUpScreen extends StatelessWidget {
               ),
               btnFlatButtonWidget(
                 title: "Sign up",
-                  fontSize: 17, fontWeight: FontWeight.w500, onPressed: () {}),
+                  fontSize: 17, fontWeight: FontWeight.w500, onPressed: () {
+                    Get.offAllNamed(AppRoutes.home);
+                  }),
               const SizedBox(
                 height: 15,
               ),
@@ -108,7 +120,7 @@ class SignUpScreen extends StatelessWidget {
                 WidgetSpan(
                     child: GestureDetector(
                   onTap: () {
-                    Get.to(LoginScreen());
+                   Get.offAllNamed(AppRoutes.login);
                   },
                   child: const Text(
                     '  Sign in',
