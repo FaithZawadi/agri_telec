@@ -103,7 +103,7 @@ class SignUpScreen extends StatelessWidget {
               btnFlatButtonWidget(
                 title: "Sign up",
                   fontSize: 17, fontWeight: FontWeight.w500, onPressed: () {
-                    Get.offAllNamed(AppRoutes.home);
+                    Get.offAllNamed(AppRoutes.loadscreen);
                   }),
               const SizedBox(
                 height: 15,

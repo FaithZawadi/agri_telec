@@ -4,6 +4,7 @@ import 'package:agri_ai/view/application/binding.dart';
 import 'package:agri_ai/view/application/view.dart';
 import 'package:agri_ai/view/home/binding.dart';
 import 'package:agri_ai/view/home/home_screen.dart';
+import 'package:agri_ai/view/home/loading.dart';
 import 'package:agri_ai/view/login/binding.dart';
 import 'package:agri_ai/view/login/login_screen.dart';
 
@@ -29,12 +30,18 @@ class AppPages {
         binding: SignupBinding()),
     GetPage(
       name: AppRoutes.home,
-      page: () => HomeScreen(),
+      page: () => HomeScreen(
+        weatherData: null,
+      ),
       binding: HomeScreenBinding(),
     ),
     GetPage(
         name: AppRoutes.application,
-        page: () => ApplicationPage(),
-        binding: ApplicationBinding())
+        page: () => const ApplicationPage(),
+        binding: ApplicationBinding()),
+    GetPage(
+        name: AppRoutes.loadscreen,
+        page: () => const LoadingScreen(),
+        binding: HomeScreenBinding())
   ];
 }

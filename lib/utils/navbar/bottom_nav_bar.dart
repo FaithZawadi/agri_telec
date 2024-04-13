@@ -13,7 +13,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
   static  final List<Widget> _pages = <Widget>[
-    HomeScreen(),
+    HomeScreen(weatherData: null,),
     const Icon(
       Icons.search,
       size: 100,

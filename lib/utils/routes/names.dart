@@ -5,5 +5,6 @@ class AppRoutes{
   static const home = '/home_screen';
   static const navbar = '/nav_bar';
   static const application = '/application';
+  static const loadscreen = '/loading';
   
 }

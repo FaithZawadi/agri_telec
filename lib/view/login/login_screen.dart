@@ -74,7 +74,7 @@ class LoginScreen extends StatelessWidget {
             btnFlatButtonWidget(
               title: "Login",
                 fontSize: 17, fontWeight: FontWeight.w500, onPressed: () {
-                  Get.offAllNamed(AppRoutes.application);
+                  Get.offAllNamed(AppRoutes.loadscreen);
                 }),
                 const SizedBox(height: 15,),
                 const Text('Forgot your password?', style: TextStyle(

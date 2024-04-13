@@ -3,6 +3,9 @@ allprojects {
         google()
         mavenCentral()
     }
+    buildscript {
+    ext.kotlin_version = '1.7.1'  // Update this with your desired version
+  }
 }
 
 rootProject.buildDir = '../build'
